@@ -1,140 +1,105 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html manifest="offline.appcache">
 <head>
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>H5手机熊猫也疯狂游戏源码</title>
+	<!-- Standardised web app manifest -->
+	<link rel="manifest" href="app.manifest" />
+	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-<!-- Custom Theme files -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="css/jquery.countdown.css" />
+	<meta name="HandheldFriendly" content="true" />
+	
+	<!-- Chrome for Android web app tags -->
+	<meta name="mobile-web-app-capable" content="yes" />
+    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			background: #000;
+			color: #fff;
+			overflow: hidden;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+    </style>
+</head> 
 
-<!--fonts--> 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<!--//fonts--> 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-</head>
-<body>
-	<div class="w3layouts-banner-slider">
-			<div class="container">
-				<div class="slider">
-					<div class="callbacks_container">
-						<ul class="rslides callbacks callbacks1" id="slider4">
-							<li>
-								<div class="agileits-banner-info">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info1">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info2">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info3">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info4">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info5">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info6">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info7">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-							<li>
-								<div class="agileits-banner-info agileits-banner-info8">
-									<div class="banner-dot"></div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<script src="js/responsiveslides.min.js"></script>
-					<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-						  // Slideshow 4
-						  $("#slider4").responsiveSlides({
-							auto: true,
-							pager:true,
-							nav:false,
-							speed: 500,
-							namespace: "callbacks",
-							before: function () {
-							  $('.events').append("<li>before event fired.</li>");
-							},
-							after: function () {
-							  $('.events').append("<li>after event fired.</li>");
-							}
-						  });
-					
-						});
-					 </script>
-					<!--banner Slider starts Here-->
-				</div>
-			</div>
+<body> 
+	<div id="fb-root"></div>
+	
+	<!-- <script>
+	// Issue a warning if trying to preview an exported project on disk.
+	(function(){
+		// Check for running exported on file protocol
+		if (window.location.protocol.substr(0, 4) === "file")
+		{
+			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
+		}
+	})();
+	</script> -->
+	
+	<!-- The canvas must be inside a div called c2canvasdiv -->
+	<div id="c2canvasdiv">
+	
+		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+		<canvas id="c2canvas" width="480" height="854">
+			<!-- This text is displayed if the visitor's browser does not support HTML5.
+			You can change it, but it is a good idea to link to a description of a browser
+			and provide some links to download some popular HTML5-compatible browsers. -->
+			
+		</canvas>
+		
 	</div>
-    <div class="bg agile">
-     	<div class="container">
-			<div class="main">
-				<div class="header">
-					<h1>Our <span>new Website</span> is <span>Coming</span> soon</h1>
-				</div>
-				<div class="content">
-					<div class="content2">
-						<div class="timer_wrap">
-							<div id="counter"> </div>		
-						</div>
-					</div>
-					<div class="content3">
-						<p>Mauris sed hendrerit massa. Etiam fringilla bibendum ligula id maximus. 
-							Integer sit amet ipsum nullaVe stibulum consequat risus sed orci tristique, 
-							eu lacinia eros congue. Nullam vehicula porta cursus. Sedlacinia justo nec 
-							tortor elementum vestibulum</p>	
-							
-						<h2>Notify Me!</h2>						
-								<form>
-								<input type="email" placeholder="Enter email to get notified.." required="">
-								<button class="btn span btn-4 btn-4a icon-arrow-right"><span></span></button>
-										   
-												<div id="response"></div>
-												
-											</form>
-					</div>
-				</div>
-				<div class="footer">
-					<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-				</div>
-			</div>
-        </div>
-   </div>
-<!--js-->
-<script src="js/jquery.countdown.js"></script>
-<script src="js/script.js"></script>
-<!--js-->
+	
+	<!-- Pages load faster with scripts at the bottom -->
+	
+	<!-- Construct 2 exported games require jQuery. -->
+	<script src="jquery-2.0.0.min.js"></script>
 
-</body>
-</html>	
+
+	
+    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
+    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
+	<script src="c2runtime.js"></script>
+
+    <script>
+		// Size the canvas to fill the browser viewport.
+		jQuery(window).resize(function() {
+			cr_sizeCanvas(jQuery(window).width(), jQuery(window).height());
+		});
+		
+		// Start the Construct 2 project running on window load.
+		jQuery(document).ready(function ()
+		{			
+			// Create new runtime using the c2canvas
+			cr_createRuntime("c2canvas");
+		});
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		
+    </script>	
+</body> 
+</html> 
